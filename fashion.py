@@ -47,11 +47,11 @@ plt.imshow(sample_1, cmap='Greys')
 # Sample 2
 
 # Get 28x28 image
-sample_2 = fashion_mnist.train.images[23].reshape(28,28)
+sample_2 = fashion_mnist.train.images[17].reshape(28,28)
 # Get corresponding integer label from one-hot encoded data
 sample_label_2 = np.where(fashion_mnist.train.labels[23] == 1)[0][0]
 # Plot sample
-print("y = {label_index} ({label})".format(label_index=sample_label_2, label=label_dict[sample_label_2]))
+print("y2 = {label_index} ({label})".format(label_index=sample_label_2, label=label_dict[sample_label_2]))
 plt.imshow(sample_2, cmap='Greys')
 
 # Network parameters
@@ -175,7 +175,7 @@ def compute_cost(Z3, Y):
 	return cost
 
 
-def model(train, test, learning_rate=0.0001, num_epochs=16, minibatch_size=32, print_cost=True, graph_filename='costs'):
+def model(train, test, learning_rate=0.0001, num_epochs=5, minibatch_size=32, print_cost=True, graph_filename='costs'):
 	'''
 	Implements a three-layer tensorflow neural network: LINEAR->RELU->LINEAR->RELU->LINEAR->SOFTMAX.
 	
